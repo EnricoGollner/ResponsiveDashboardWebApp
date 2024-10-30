@@ -13,18 +13,17 @@ class BarChartWidget extends StatelessWidget {
       BarChartData(
           borderData: FlBorderData(show: false),
           alignment: BarChartAlignment.spaceBetween,
-          // axisTitleData: FlAxis(
+          // axisTitleData: FlAxis( //TODO - VERIFICAR PARA REFATORAR
           //   leftTitle: AxisTitle(reservedSize: 20),
           // ),
-          gridData: const FlGridData(
-              drawHorizontalLine: true, horizontalInterval: 30),
+          gridData: const FlGridData(drawHorizontalLine: true, horizontalInterval: 30),
           titlesData: FlTitlesData(
             leftTitles: AxisTitles(
               sideTitles: SideTitles(
                 reservedSize: 30,
                 getTitlesWidget: (value, _) {
                   return Text(
-                    _getValue(value),
+                    _getChartValueLabel(value),
                     style: chartMiniLabelStyle,
                   );
                 },
@@ -35,7 +34,7 @@ class BarChartWidget extends StatelessWidget {
                 showTitles: true,
                 getTitlesWidget: (value, meta) {
                   return Text(
-                    _getMonthValue(value),
+                    _getMonth(value),
                     style: chartMiniLabelStyle,
                   );
                 },
@@ -157,7 +156,7 @@ class BarChartWidget extends StatelessWidget {
     );
   }
 
-  String _getValue(double value) {
+  String _getChartValueLabel(double value) {
     if (value == 0) {
       return '0';
     } else if (value == 30) {
@@ -171,33 +170,21 @@ class BarChartWidget extends StatelessWidget {
     }
   }
 
-  String _getMonthValue(double value) {
-    if (value == 0) {
-      return 'JAN';
-    } else if (value == 1) {
-      return 'FEB';
-    } else if (value == 2) {
-      return 'MAR';
-    } else if (value == 3) {
-      return 'APR';
-    } else if (value == 4) {
-      return 'MAY';
-    } else if (value == 5) {
-      return 'JUN';
-    } else if (value == 6) {
-      return 'JUL';
-    } else if (value == 7) {
-      return 'AUG';
-    } else if (value == 8) {
-      return 'SEP';
-    } else if (value == 9) {
-      return 'OCT';
-    } else if (value == 10) {
-      return 'NOV';
-    } else if (value == 11) {
-      return 'DEC';
-    } else {
-      return '';
-    }
+  String _getMonth(double value) {
+    return switch (value) {
+      0 => 'JAN',
+      1 => 'FEB',
+      2 => 'MAR',
+      3 => 'APR',
+      4 => 'MAY',
+      5 => 'JUN',
+      6 => 'JUL',
+      7 => 'AUG',
+      8 => 'SEP',
+      9 => 'OCT',
+      10 => 'NOV',
+      11 => 'DEC',
+      _ => ''
+    };
   }
 }

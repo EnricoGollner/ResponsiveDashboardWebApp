@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_web_app/app/config/responsive.dart';
 import 'package:responsive_web_app/app/style/colors.dart';
+import 'package:responsive_web_app/app/style/fonts.dart';
 import 'package:responsive_web_app/app/style/style.dart';
 
 class Header extends StatelessWidget {
@@ -45,10 +46,7 @@ class Header extends StatelessWidget {
                 color: AppColors.black,
               ),
               hintText: 'Search',
-              hintStyle: const TextStyle(
-                color: AppColors.secondary,
-                fontSize: 14,
-              ),
+              hintStyle: hintStyle,
             ),
           ),
         ),

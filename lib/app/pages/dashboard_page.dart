@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_web_app/app/config/responsive.dart';
 import 'package:responsive_web_app/app/config/size_config.dart';
-import 'package:responsive_web_app/app/pages/components/app_bar_action_items_widget.dart';
+import 'package:responsive_web_app/app/pages/components/app_bar_action_items.dart';
 import 'package:responsive_web_app/app/pages/components/bar_chart_widget.dart';
 import 'package:responsive_web_app/app/pages/components/header_widget.dart';
 import 'package:responsive_web_app/app/pages/components/history_table.dart';
@@ -31,11 +31,10 @@ class DashboardPage extends StatelessWidget {
               elevation: 0,
               backgroundColor: AppColors.white,
               leading: IconButton(
-                  onPressed: () => _drawerKey.currentState?.openDrawer(),
-                  icon: const Icon(Icons.menu, color: AppColors.black)),
-              actions: const [
-                AppBarActionItemsWidget(),
-              ],
+                onPressed: () => _drawerKey.currentState?.openDrawer(),
+                icon: const Icon(Icons.menu, color: AppColors.black),
+              ),
+              actions: const [AppBarActionItems()],
             )
           : const PreferredSize(
               preferredSize: Size.zero,
@@ -160,7 +159,7 @@ class DashboardPage extends StatelessWidget {
                     padding: EdgeInsets.symmetric(vertical: 30, horizontal: 30),
                     child: Column(
                       children: [
-                        AppBarActionItemsWidget(),
+                        AppBarActionItems(),
                         PaymentDetailsListWidget(),
                       ],
                     ),

@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:responsive_web_app/app/style/colors.dart';
 
-class AppBarActionItemsWidget extends StatelessWidget {
-  const AppBarActionItemsWidget({
-    super.key,
-  });
+class AppBarActionItems extends StatelessWidget {
+  const AppBarActionItems({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,15 +11,17 @@ class AppBarActionItemsWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         IconButton(
-            icon: SvgPicture.asset(
-              'assets/calendar.svg',
-              width: 20,
-            ),
-            onPressed: () {}),
+          icon: SvgPicture.asset(
+            'assets/calendar.svg',
+            width: 20,
+          ),
+          onPressed: () {},
+        ),
         const SizedBox(width: 10),
         IconButton(
-            icon: SvgPicture.asset('assets/ring.svg', width: 20.0),
-            onPressed: () {}),
+          icon: SvgPicture.asset('assets/ring.svg', width: 20.0),
+          onPressed: () {},
+        ),
         const SizedBox(width: 15),
         const Row(
           children: [
