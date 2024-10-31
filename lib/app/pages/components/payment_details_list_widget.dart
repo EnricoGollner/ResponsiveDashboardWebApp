@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_web_app/app/config/size_config.dart';
-import 'package:responsive_web_app/app/data/data.dart';
+import 'package:responsive_web_app/app/mock/data.dart';
 import 'package:responsive_web_app/app/pages/components/payment_list_tile.dart';
 import 'package:responsive_web_app/app/style/colors.dart';
 import 'package:responsive_web_app/app/style/style.dart';

@@ -3,7 +3,7 @@ import 'package:responsive_web_app/app/config/responsive.dart';
 import 'package:responsive_web_app/app/config/size_config.dart';
 import 'package:responsive_web_app/app/pages/components/app_bar_action_items.dart';
 import 'package:responsive_web_app/app/pages/components/bar_chart_widget.dart';
-import 'package:responsive_web_app/app/pages/components/header_widget.dart';
+import 'package:responsive_web_app/app/pages/components/header.dart';
 import 'package:responsive_web_app/app/pages/components/history_table.dart';
 import 'package:responsive_web_app/app/pages/components/info_card.dart';
 import 'package:responsive_web_app/app/pages/components/payment_details_list_widget.dart';
@@ -124,7 +124,6 @@ class DashboardPage extends StatelessWidget {
                         child: BarChartWidget(),
                       ),
                       SizedBox(height: SizeConfig.blockSizeVertical * 5),
-
                       const Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [

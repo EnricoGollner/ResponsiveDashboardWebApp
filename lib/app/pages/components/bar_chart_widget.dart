@@ -13,14 +13,15 @@ class BarChartWidget extends StatelessWidget {
       BarChartData(
           borderData: FlBorderData(show: false),
           alignment: BarChartAlignment.spaceBetween,
-          // axisTitleData: FlAxis( //TODO - VERIFICAR PARA REFATORAR
-          //   leftTitle: AxisTitle(reservedSize: 20),
-          // ),
           gridData: const FlGridData(drawHorizontalLine: true, horizontalInterval: 30),
           titlesData: FlTitlesData(
+            topTitles: const AxisTitles(),
+            rightTitles: const AxisTitles(),
             leftTitles: AxisTitles(
               sideTitles: SideTitles(
                 reservedSize: 30,
+                interval: 30,
+                showTitles: true,
                 getTitlesWidget: (value, _) {
                   return Text(
                     _getChartValueLabel(value),
